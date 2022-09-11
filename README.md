@@ -7,4 +7,4 @@
 
 Upload this `gecko.php` To Your Target!
 
-Copyright By &copy;MrMad
+Copyright By &copy; MrMad
