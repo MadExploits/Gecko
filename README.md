@@ -1,4 +1,10 @@
-# Gecko backdoor PHP
-Gecko Backdoor Bypassed PHP
+# GeCko WebShell Backdoor
 
-Encoding Code to the hex for bypassing WAF
+* Bypass 403
+* Bypass 404
+* Bypass LiteSpeed
+* Bypass 500
+
+Upload this `gecko.php` To Your Target!
+
+Copyright By &copy;MrMad
