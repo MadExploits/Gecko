@@ -528,7 +528,7 @@ $scdir = $fungsi[16]("{.[!.],}*", GLOB_BRACE);
                     <li><a href="?dir=<?= hex($fungsi[9]()); ?>&action=terminal" class=""><i class="fa-solid fa-terminal"></i>&nbsp;Terminal</a></li>
                     <li><a href="?dir=<?= hex($fungsi[9]()); ?>&create=file" class=""><i class="fa-solid fa-file-circle-plus"></i>&nbsp;Create File</a></li>
                     <li><a href="?dir=<?= hex($fungsi[9]()); ?>&create=folder" class=""><i class="fa-solid fa-folder-plus"></i>&nbsp;Create Folder</a></li>
-                    <li><a href="https://github.com/MadExploits/Gecko" class=""><i class="fa-solid fa-book"></i>&nbsp;Readme</a></li>
+                    <li><a href="https://github.com/MadExploits" class=""><i class="fa-solid fa-book"></i>&nbsp;Readme</a></li>
                 </ul>
             </div>
         </div>
