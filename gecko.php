@@ -543,7 +543,7 @@ $scdir = $fungsi[16]("{.[!.],}*", GLOB_BRACE);
                     $pwd = explode("/", $cwd);
                     foreach ($pwd as $id => $val) {
                         if ($val == '' && $id == 0) {
-                            echo '<a href="?dir=' . hex('/') . '">/ </a>';
+                            echo '<a href="?dir=' . hex('/') . '"><i class="fa-solid fa-folder-plus"></i>&nbsp;/ </a>';
                             continue;
                         }
                         if ($val == '') continue;
