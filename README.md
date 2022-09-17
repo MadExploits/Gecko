@@ -6,8 +6,8 @@
 * Bypass 500
 
 # Fitur This Webshell
-* localroot suggester
-* Virus Scanner
+* Localroot suggester
+* Backdoor Remover
 
 Upload this `gecko.php` To Your Target!
 
