@@ -5,7 +5,7 @@
 * Bypass LiteSpeed
 * Bypass 500
 
-# Fitur This Webshell
+# Feature this webshell
 * Localroot suggester
 * Backdoor Remover
 
