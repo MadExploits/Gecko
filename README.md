@@ -7,7 +7,16 @@
 
 # Feature this webshell
 * Localroot suggester
-* Backdoor Remover
+* Backdoor Destroyer
+* Auto Root > Pwnkit 
+
+# Fixed
+Fixed Bug On Backdoor Destroyer
+Fixed Bug On Auto Root!
+
+# Read this
+
+if you want to using auto root please type `root`
 
 Upload this `gecko.php` To Your Target!
 
