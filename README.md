@@ -23,4 +23,4 @@ Upload this `gecko.php` To Your Target!
 Copyright By &copy; MrMad
 
 
-<img src="https://raw.githubusercontent.com/MadExploits/Gecko/main/Screenshot%20from%202022-09-18%2017-29-16.png" width="50" height="50">
+<img src="https://raw.githubusercontent.com/MadExploits/Gecko/main/Screenshot%20from%202022-09-18%2017-29-16.png" width="500" height="300">
