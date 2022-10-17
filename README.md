@@ -9,6 +9,8 @@
 * Localroot suggester
 * Backdoor Destroyer
 * Auto Root > Pwnkit 
+* Lock File
+* Lock Shell
 
 # Fixed
 Fixed Bug On Backdoor Destroyer
