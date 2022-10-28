@@ -25,4 +25,4 @@ Upload this `gecko.php` To Your Target!
 Copyright By &copy; MrMad
 
 
-<img src="https://raw.githubusercontent.com/MadExploits/Gecko/main/Screenshot520from%202022-10-28%2017-57-48.png" style="widht:100%;" height="400">
+<img src="https://raw.githubusercontent.com/MadExploits/Gecko/main/Screenshot%20from%202022-10-28%2017-57-48.png" style="widht:100%;" height="400">
