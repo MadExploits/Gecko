@@ -2,7 +2,6 @@
 
 * Bypass 403
 * Bypass 404
-* Bypass LiteSpeed
 * Bypass 500
 
 # Feature this webshell
