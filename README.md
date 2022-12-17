@@ -5,11 +5,12 @@
 * Bypass 500
 
 # Feature this webshell
-* Localroot suggester
+* Linux Exploit Suggester
 * Backdoor Destroyer
 * Auto Root > Pwnkit 
 * Lock File
 * Lock Shell
+* Add UserName > ROOT EDITION
 
 # Fixed
 Fixed Bug On Backdoor Destroyer
