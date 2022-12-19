@@ -18,7 +18,7 @@ Fixed Bug On Auto Root!
 
 # Read this
 
-if you want to using auto root please type `root`
+if you want to using auto root please type `root` for older version
 
 Upload this `gecko.php` To Your Target!
 
