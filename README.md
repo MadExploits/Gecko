@@ -22,7 +22,7 @@ if you want to using auto root please type `root` for older version
 
 Upload this `gecko.php` To Your Target!
 
-Copyright By &copy; MrMad
+Copyright By &copy; ./Mr.Mad
 
 
 <img src="https://github.com/MadExploits/Gecko/raw/main/Screenshot%20from%202023-01-17%2022-08-51.png" style="width:100%;">
