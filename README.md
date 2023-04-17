@@ -14,6 +14,7 @@
 * Add UNLOCK SHELL
 * Add Backconnect
 * Add Hash identifier
+* Add adminer
 
 # Fixed
 Fixed Bug On Backdoor Destroyer
