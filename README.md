@@ -11,6 +11,9 @@
 * Lock File
 * Lock Shell
 * Add UserName > ROOT EDITION
+* Add UNLOCK SHELL
+* Add Backconnect
+* Add Hash identifier
 
 # Fixed
 Fixed Bug On Backdoor Destroyer
