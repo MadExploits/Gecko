@@ -22,6 +22,8 @@ Fixed Bug On Auto Root!
 
 # Read this
 
+I'm not responsible for what you guys do using my tools!
+
 if you want to using auto root please type `root` for older version
 
 Upload this `gecko.php` To Your Target!
