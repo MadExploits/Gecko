@@ -29,7 +29,7 @@
 * Add Hash identifier
 * Add adminer
 * Add Cpanel RESET
-* Add Wordpress add admin user
+* Wordpress add admin user
   
 </samp>
   
