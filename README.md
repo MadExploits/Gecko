@@ -21,10 +21,12 @@
   
 <div align="center"><h1>Fixed</h1></div>
 
-Fixed Bug On Backdoor Destroyer
-Fixed Bug On Auto Root!
+* Fixed Bug On Backdoor Destroyer
+* Fixed Bug On Auto Root!
 
 <div align="center"><h1>Read this</h1></div>
+
+<samp>
 
 I'm not responsible for what you guys do using my tools!
 
@@ -32,4 +34,6 @@ if you want to using auto root please type `root` for older version
 
 Upload this `gecko.php` To Your Target!
 
+
+</samp>
 Copyright By &copy; ./Mr.Mad
