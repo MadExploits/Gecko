@@ -1,10 +1,11 @@
-<div align="center"><h1>GeCko WebShell Backdoor</h1></div>
+<div align="center"><h1>Gecko Webshells Backdoor</h1></div>
 
 * Bypass 403
 * Bypass 404
 * Bypass 500
 
-# Feature this webshell
+<div align="center"><h1>Feature this Webshells Backdoor</h1></div>
+
 * Linux Exploit Suggester
 * Backdoor Destroyer
 * Auto Root > Pwnkit 
@@ -18,11 +19,12 @@
 * Add Cpanel RESET
 * Add Wordpress add admin user
   
-# Fixed
+<div align="center"><h1>Fixed</h1></div>
+
 Fixed Bug On Backdoor Destroyer
 Fixed Bug On Auto Root!
 
-# Read this
+<div align="center"><h1>Read this</h1></div>
 
 I'm not responsible for what you guys do using my tools!
 
