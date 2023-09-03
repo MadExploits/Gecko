@@ -30,7 +30,7 @@
 * Add adminer
 * Add Cpanel RESET
 * Wordpress add admin user
-  
+
 </samp>
   
 <div align="center"><h1>Fixed</h1></div>
