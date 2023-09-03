@@ -30,7 +30,6 @@
 * Add adminer
 * Add Cpanel RESET
 * Wordpress add admin user
-* 
   
 </samp>
   
