@@ -48,7 +48,7 @@
 
 I'm not responsible for what you guys do using my tools!
 
-if you want to using auto root please type `root` for older version
+if you want to using auto root please type `root` for older version `gecko-old.php`
 
 Upload this `gecko.php` To Your Target!
 
