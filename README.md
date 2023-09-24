@@ -11,7 +11,10 @@
 * Bypass 403
 * Bypass 404
 * Bypass 500
-  
+* Bypass litespeed
+* Bypass blankphp
+* Bypass downloaded
+
 </samp>
 
 <div align="center"><h1>Feature this webshells backdoor</h1></div>
