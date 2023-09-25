@@ -59,6 +59,8 @@ if you want to using auto root please type `root` for older version `gecko-old.p
 
 Upload this `gecko.php` To Your Target!
 
+<div align="center">
+</div>
 
 </samp>
 Copyright By &copy; ./Mr.Mad
