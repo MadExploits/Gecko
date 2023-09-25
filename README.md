@@ -3,10 +3,9 @@
 <br>
 
 <div align="center">
-
-![php](https://img.shields.io/badge/PHP-8.2-bf616a?style=flat-square)
+  
 ![licence](https://img.shields.io/badge/LICENE-GPL2.0-ebcb8b?style=flat-square)
-![version](https://img.shields.io/badge/VERSION-1.3.1-a3be8c?style=flat-square)
+![version](https://img.shields.io/badge/VERSION-1.0.2-a3be8c?style=flat-square)
   
  </div>
 <br>
