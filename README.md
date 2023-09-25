@@ -3,7 +3,11 @@
 <br>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white"><img src="https://img.shields.io/badge/-Hackerrank-2EC866?style=for-the-badge&logo=HackerRank&logoColor=white"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"><img src="https://img.shields.io/badge/Medium-12100E?style=for-the-badge&logo=medium&logoColor=white"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white">
+
+![php](https://img.shields.io/badge/PHP-8.2-bf616a?style=flat-square)
+![licence](https://img.shields.io/badge/LICENE-GPL2.0-ebcb8b?style=flat-square)
+![version](https://img.shields.io/badge/VERSION-1.3.1-a3be8c?style=flat-square)
+  
  </div>
 <br>
 
