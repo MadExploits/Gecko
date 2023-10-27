@@ -37,6 +37,10 @@
 * Add adminer
 * Add Cpanel RESET
 * Wordpress add admin user
+* Add Compressor zip
+* Add Decomporessor Archive
+* No detect shell
+
 
 </samp>
   
