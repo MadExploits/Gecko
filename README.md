@@ -63,15 +63,17 @@ if you want to using auto root please type `root` for older version `gecko-old.p
 
 Upload this `gecko.php` To Your Target!
 
+
+<div align="center">
+<img src="https://raw.githubusercontent.com/MadExploits/Gecko/main/Screenshot%202023-10-26%20190137.png">  
+</div>
+
+
 <div align="center">
  <h1> Support me : </h1>
 <a href="https://www.buymeacoffee.com/muhsatria"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=☕&slug=muhsatria&button_colour=FFDD00&font_colour=000000&font_family=Comic&outline_colour=000000&coffee_colour=ffffff" /></a>
 </div>
 
-
-<div align="center">
-<img src="https://raw.githubusercontent.com/MadExploits/Gecko/main/Screenshot%202023-10-26%20190137.png">  
-</div>
 
 Copyright (c) 2023 MrMad
 </samp>
