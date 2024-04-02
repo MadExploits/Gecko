@@ -65,7 +65,7 @@ Upload this `gecko.php` To Your Target!
 
 
 <div align="center">
-<img src="https://raw.githubusercontent.com/MadExploits/Gecko/main/Screenshot%202023-10-26%20190137.png">  
+<img src="https://raw.githubusercontent.com/MadExploits/Gecko/main/image.png">  
 </div>
 
 
