@@ -57,7 +57,7 @@
 
 <samp>
 
-I'm not responsible for what you guys do using my tools!
+I'm not responsible for what you guys do using my tools!, Segala macam backdoor yang membawa gecko dll, gecko asli hanya di github MadExploits
 
 if you want to using auto root please type `root` for older version `gecko-old.php`
 
